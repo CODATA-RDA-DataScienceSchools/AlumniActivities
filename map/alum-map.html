@@ -150,7 +150,7 @@ td, th {
 <body>
 
   <p>This interactive map shows participation in the CODATA/RDA Schools of Research Data Science. The map code is based on this openly available <a href="http://techslides.com/d3-map-starter-kit">template</a> and modified to add data about the school participants.</p>
-  <p>Mouseover a country on the map or an arc on the charts below to get more information, click on a country or an arc in the charts to get contact information for the participants in that country or demographic.</p>
+  <p>Mouseover a country on the map or an arc on the charts below to get more information, click on a country or an arc in the charts to get contact information for the participants in that country or demographic. Gender is not clickable.</p>
 
   <div id="container"></div>
   <div id="graphs">
@@ -511,11 +511,11 @@ var color = d3.scale.category20c();
 
           })
           .on("mouseout",  function(d,i) {
-                  tooltip.classed("hidden", true);})
-          .on("click", function(d,i) {
-                  draw_table_gen(d.data.key);
-                  d3.selectAll("tr").remove();
-                });
+                  tooltip.classed("hidden", true);});
+//          .on("click", function(d,i) {
+//                  draw_table_gen(d.data.key);
+//                  d3.selectAll("tr").remove();
+//                });
 
 			arcs.append("text")
 			    .attr("transform", function(d) {
